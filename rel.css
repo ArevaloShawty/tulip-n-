@@ -1,0 +1,129 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #9b59b6, #d385c6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.content {
+    position: relative;
+}
+
+.leaf {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    animation: leafIn 1s ease-out forwards;
+}
+
+.page {
+    font-size: 1.5em;
+    color: #6c4f94;
+    text-align: center;
+}
+
+button {
+    background-color: #f39c12;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+/* Animaciones */
+@keyframes leafIn {
+    0% {
+        transform: translateX(-50%) rotate(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes leafOut {
+    0% {
+        transform: translateX(-50%) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) rotate(90deg);
+        opacity: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.poem-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.poem-content {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: #ecf0f1;
+    max-width: auto;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animación del poema */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .leaf {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .poem-content {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+}
